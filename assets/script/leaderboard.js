@@ -79,6 +79,7 @@ function setData(){
     }else{
 
         try{
+            
         all_students_arr.sort(function(stu1, stu2){return stu2[2] - stu1[2]})
 
         var student_rank = 1
@@ -96,18 +97,13 @@ function setData(){
                 prev_points = student[2]
                 student_rank++
             }
-    
-            if(student_rank > 5)
-                break
-    
+ 
             setLeaderboardView(student_rank, student[0], student[1], student[2])
         }
 
     }catch(err){
         console.log("Error")
     }
-
-        document.getElementById("bottom").innerHTML = "Only Top 5 Students"
 
     }
 
